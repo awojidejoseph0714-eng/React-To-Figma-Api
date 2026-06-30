@@ -1,0 +1,17 @@
+{
+  "name": "react-to-figma-api",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0",
+    "esbuild": "^0.19.0",
+    "playwright-core": "^1.40.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "vercel": "^33.0.0"
+  }
+}
