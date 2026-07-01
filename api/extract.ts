@@ -26,8 +26,13 @@ let browserPromise: Promise<any> | null = null;
 
 async function getBrowser() {
   if (!browserPromise) {
+    // ─── Diagnostic logging: confirms exactly what value Playwright receives ───
+    console.log('BROWSERLESS_WS raw value:', JSON.stringify(BROWSERLESS_WS));
+    console.log('BROWSERLESS_WS length:', BROWSERLESS_WS?.length);
+    console.log('BROWSERLESS_WS starts with wss://:', BROWSERLESS_WS?.startsWith('wss://'));
+
     browserPromise = chromium.connectOverCDP(BROWSERLESS_WS).catch(err => {
-      console.error('Browserless connection failed:', err.message);
+      console.error('Browserless connection failed:', err.message, err.stack);
       browserPromise = null;
       throw err;
     });
