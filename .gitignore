@@ -1,51 +1,11 @@
 # Dependencies
 node_modules/
-.vercel
-
-
-# Build outputs
-dist/
-build/
-.next/
-out/
-
-# Environment variables
+vercel/
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+.next/
 # Logs
 logs/
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# OS files
-.DS_Store
-Thumbs.db
 
 # Editor/IDE
 .vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
-# Testing
-coverage/
-.nyc_output/
-
-# Misc
-.cache/
-.parcel-cache/
-*.tsbuildinfo
