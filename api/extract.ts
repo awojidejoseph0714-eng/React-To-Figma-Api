@@ -5,7 +5,11 @@ import { chromium } from 'playwright-core';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-const BROWSERLESS_WS = process.env.BROWSERLESS_WS_URL || 'wss://chrome.browserless.io?token=YOUR_TOKEN';
+const BROWSERLESS_WS = process.env.BROWSERLESS_WS_URL;
+
+if (!BROWSERLESS_WS) {
+  throw new Error('Missing required env var: BROWSERLESS_WS_URL');
+}
 
 // ─── Read React scripts once at module load (warm instance reuses) ───
 const REACT_SCRIPT = readFileSync(
